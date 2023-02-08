@@ -6,8 +6,8 @@
 	2. first create network `docker network create "local" -d bridge`
 	3. copy `.env.example` to `.env`
 	4. setup your any credential in `.env` file
-	5. run command `docker-compose -f docker-compose.database.yml up --build -d` for run database instance
-	6. run command `docker-compose -f docker-compose.local.yml up --build -d` for run application instance
+	5. run command `docker-compose -f ./docker/docker-compose.database.yml --env-file .env up --build -d` for run database instance
+	6. run command `docker-compose -f ./docker/docker-compose.development.yml --env-file .env up --build` for run application instance
 	7. login into application container then run `npm run migrate && npm run seed`
 	8. open `http://localhost:3000` in your browser
 	9. enjoy!
